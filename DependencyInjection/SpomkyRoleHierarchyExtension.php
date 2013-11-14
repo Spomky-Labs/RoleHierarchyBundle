@@ -8,7 +8,7 @@ use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
 
-class FOSOAuthServerExtension extends Extension
+class SpomkyRoleHierarchyExtension extends Extension
 {
     public function load(array $configs, ContainerBuilder $container)
     {
