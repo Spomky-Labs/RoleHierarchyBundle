@@ -7,18 +7,18 @@ use Spomky\RoleHierarchyBundle\Model\RoleManagerInterface;
 
 class RoleHierarchy extends BaseRoleHierarchy
 {
-    protected $em;
+    protected $rm;
 
-    public function __construct(array $hierarchy, RoleManagerInterface $em)
+    public function __construct(array $hierarchy, RoleManagerInterface $rm)
     {
-        $this->em = $em;
+        $this->rm = $rm;
         parent::__construct($this->buildRolesTree());
     }
 
     protected function buildRolesTree()
     {
         $hierarchy = array();
-        $roles = $this->em->createQuery('SELECT r from UserBundle:Role r')->execute();
+        $roles = $this->rm->getRoles();
         foreach ($roles as $role) {
             /** @var $role Role */
             if ($role->getParent()) {
