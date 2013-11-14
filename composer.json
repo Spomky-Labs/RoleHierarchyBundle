@@ -1,0 +1,29 @@
+{
+    "name": "spomky/role-hierarchy-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony2 Role Hierarchy Bundle",
+    "keywords": ["role", "hierarchy"],
+    "homepage": "https://github.com/Spomky/SpomkyRoleHierarchy",
+    "license": "MIT",
+    "authors": [
+        {
+          "name": "Florent Morselli"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "symfony/framework-bundle": "~2.1"
+    },
+    "require-dev": {
+        "symfony/class-loader": "~2.1",
+        "symfony/yaml": "~2.1",
+        "doctrine/doctrine-bundle": "~1.0",
+        "doctrine/orm": ">=2.2,<2.5-dev"
+    },
+    "suggest": {
+    },
+    "autoload": {
+        "psr-0": { "Spomky\\RoleHierarchyBundle": "" }
+    },
+    "target-dir": "Spomky/RoleHierarchyBundle"
+}
