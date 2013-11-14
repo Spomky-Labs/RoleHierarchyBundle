@@ -5,28 +5,18 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
-        <service id="fos_oauth_server.client_manager.default" class="FOS\OAuthServerBundle\Entity\ClientManager">
-            <argument type="service" id="fos_oauth_server.entity_manager" />
-            <argument>%fos_oauth_server.model.client.class%</argument>
+        <service id="spomky_role_hierarchy.role_manager.default" class="Spomky\RoleHierarchyBundle\Entity\RoleManager">
+            <argument type="service" id="spomky_role_hierarchy.entity_manager" />
+            <argument>%spomky_role_hierarchy.model.role.class%</argument>
         </service>
 
-        <service id="fos_oauth_server.access_token_manager.default" class="FOS\OAuthServerBundle\Entity\AccessTokenManager">
-            <argument type="service" id="fos_oauth_server.entity_manager" />
-            <argument>%fos_oauth_server.model.access_token.class%</argument>
+        <service id="spomky_role_hierarchy.entity_manager" factory-service="doctrine" factory-method="getManager" class="Doctrine\ORM\EntityManager" public="false">
+            <argument>%spomky_role_hierarchy.model_manager_name%</argument>
         </service>
 
-        <service id="fos_oauth_server.refresh_token_manager.default" class="FOS\OAuthServerBundle\Entity\RefreshTokenManager">
-            <argument type="service" id="fos_oauth_server.entity_manager" />
-            <argument>%fos_oauth_server.model.refresh_token.class%</argument>
-        </service>
-
-        <service id="fos_oauth_server.auth_code_manager.default" class="FOS\OAuthServerBundle\Entity\AuthCodeManager">
-            <argument type="service" id="fos_oauth_server.entity_manager" />
-            <argument>%fos_oauth_server.model.auth_code.class%</argument>
-        </service>
-
-        <service id="fos_oauth_server.entity_manager" factory-service="doctrine" factory-method="getManager" class="Doctrine\ORM\EntityManager" public="false">
-            <argument>%fos_oauth_server.model_manager_name%</argument>
+        <service id="security.role_hierarchy" class="Spomky\RoleHierarchyBundle\Security\RoleHierarchy" public="false">
+            <argument>%security.role_hierarchy.roles%</argument>
+            <argument type="service" id="spomky_role_hierarchy.role_manager"/>
         </service>
     </services>
 

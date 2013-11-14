@@ -1,6 +1,6 @@
 <?php
 
-namespace Spomky\RoleHierarchyBundle\Model;
+namespace Spomky\RoleHierarchyBundle\Security;
 
 use Symfony\Component\Security\Core\Role\RoleHierarchy as BaseRoleHierarchy;
 use Spomky\RoleHierarchyBundle\Model\RoleManagerInterface;
