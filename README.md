@@ -1,7 +1,7 @@
 Role Hierarchy
 ==============
 
-[![Build Status](https://secure.travis-ci.org/Spomky/RoleHierarchyBundle.png)](http://travis-ci.org/Spomky/RoleHierarchyBundle)
+[![Build Status](https://secure.travis-ci.org/Spomky/SpomkyRoleHierarchy.png?branch=master)](http://travis-ci.org/Spomky/SpomkyRoleHierarchy)
 
 
 # Prerequisites #
