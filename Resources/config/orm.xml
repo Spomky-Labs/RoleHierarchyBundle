@@ -5,7 +5,7 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
-        <service id="spomky_role_hierarchy.role_manager.default" class="Spomky\RoleHierarchyBundle\Entity\RoleManager">
+        <service id="spomky_role_hierarchy.role_manager.default" class="Spomky\RoleHierarchyBundle\Model\RoleManager">
             <argument type="service" id="doctrine.orm.entity_manager" />
             <argument>%spomky_role_hierarchy.role.class%</argument>
         </service>
