@@ -3,6 +3,13 @@ namespace Spomky\RoleHierarchyBundle\Entity;
 
 use Spomky\RoleHierarchyBundle\Model\Role as BaseRole;
 
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Role
+ *
+ * @ORM\Entity()
+ */
 class Role extends BaseRole
 {
     /**
