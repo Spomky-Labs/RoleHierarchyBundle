@@ -34,7 +34,6 @@ class RoleHierarchy extends BaseRoleHierarchy
                 }
             }
         }
-        var_dump($hierarchy);
         return $hierarchy;
     }
 }
