@@ -21,7 +21,7 @@ class RoleHierarchy extends BaseRoleHierarchy
         $hierarchy = array();
         $roles = $this->rm->getRoles();
         foreach ($roles as $role) {
-            if (!$role instanceof RoleInterface){
+            if ($role instanceof RoleInterface){
                 if ($role->getParent()) {
                     if (!isset($hierarchy[$role->getParent()->getName()])) {
                         $hierarchy[$role->getParent()->getName()] = array();
@@ -34,6 +34,7 @@ class RoleHierarchy extends BaseRoleHierarchy
                 }
             }
         }
+        var_dump($hierarchy);
         return $hierarchy;
     }
 }
