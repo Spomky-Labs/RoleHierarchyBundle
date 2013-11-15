@@ -104,7 +104,7 @@ If you are persisting your data via the Doctrine ORM, then your classe should li
 	    protected $parent;
 	
 	    public function getId() {
-	        return $this->name;
+	        return $this->id;
 	    }
 	
 	    public function setName($name) {
