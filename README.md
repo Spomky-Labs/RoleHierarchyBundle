@@ -13,10 +13,10 @@ It only supports Doctrine ORM.
 
 Installation is a quick 4 steps process:
 
-    Download SpomkyRoleHierarchyBundle
-    Enable the Bundle
-    Create your model class
-    Configure the SpomkyRoleHierarchyBundle
+* Download SpomkyRoleHierarchyBundle
+* Enable the Bundle
+* Create your model class
+* Configure the SpomkyRoleHierarchyBundle
 
 ##Step 1: Install SpomkyRoleHierarchyBundle##
 
