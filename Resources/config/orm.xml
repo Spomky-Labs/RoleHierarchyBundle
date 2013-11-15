@@ -11,7 +11,6 @@
         </service>
 
         <service id="security.role_hierarchy" class="Spomky\RoleHierarchyBundle\Security\RoleHierarchy" public="false">
-            <argument>%security.role_hierarchy.roles%</argument>
             <argument type="service" id="spomky_role_hierarchy.role_manager"/>
         </service>
     </services>

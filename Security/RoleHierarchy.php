@@ -9,7 +9,7 @@ class RoleHierarchy extends BaseRoleHierarchy
 {
     protected $rm;
 
-    public function __construct(array $hierarchy, RoleManagerInterface $rm)
+    public function __construct(RoleManagerInterface $rm)
     {
         $this->rm = $rm;
         parent::__construct($this->buildRolesTree());
@@ -20,7 +20,6 @@ class RoleHierarchy extends BaseRoleHierarchy
         $hierarchy = array();
         $roles = $this->rm->getRoles();
         foreach ($roles as $role) {
-            /** @var $role Role */
             if ($role->getParent()) {
                 if (!isset($hierarchy[$role->getParent()->getName()])) {
                     $hierarchy[$role->getParent()->getName()] = array();
