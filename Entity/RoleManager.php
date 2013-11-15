@@ -2,7 +2,7 @@
 
 namespace Spomky\RoleHierarchyBundle\Entity;
 
-use Spomky\RoleHierarchyBundle\Model\BaseRoleManager;
+use Spomky\RoleHierarchyBundle\Model\RoleManager as BaseRoleManager;
 
 class RoleManager extends BaseRoleManager
 {

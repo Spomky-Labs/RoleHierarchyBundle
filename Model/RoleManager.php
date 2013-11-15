@@ -2,7 +2,9 @@
 
 namespace Spomky\RoleHierarchyBundle\Model;
 
-class RoleManager extends RoleManagerInterface
+use Doctrine\ORM\EntityManager;
+
+class RoleManager implements RoleManagerInterface
 {
     /**
      * @var \Doctrine\ORM\EntityManager
