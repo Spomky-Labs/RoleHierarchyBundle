@@ -2,6 +2,10 @@ Role Hierarchy
 ==============
 
 [![Build Status](https://secure.travis-ci.org/Spomky/SpomkyRoleHierarchy.png?branch=master)](http://travis-ci.org/Spomky/SpomkyRoleHierarchy)
+[![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/Spomky/SpomkyRoleHierarchy/badges/quality-score.png?s=b3360fe0df34dad0beece620024575011f7a2e21)](https://scrutinizer-ci.com/g/Spomky/SpomkyRoleHierarchy/)
+[![Code Coverage](https://scrutinizer-ci.com/g/Spomky/SpomkyRoleHierarchy/badges/coverage.png?s=c6d7d9205836bbf0fb31ac5b900e5a504f4e1da7)](https://scrutinizer-ci.com/g/Spomky/SpomkyRoleHierarchy/)
+
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/087e8177-3756-4df4-bbea-d29e9886ffef/big.png)](https://insight.sensiolabs.com/projects/087e8177-3756-4df4-bbea-d29e9886ffef)
 
 
 # Prerequisites #
