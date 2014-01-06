@@ -7,6 +7,7 @@ Role Hierarchy
 
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/087e8177-3756-4df4-bbea-d29e9886ffef/big.png)](https://insight.sensiolabs.com/projects/087e8177-3756-4df4-bbea-d29e9886ffef)
 
+[![Dependency Status](https://www.versioneye.com/user/projects/52caa904ec1375acc6000162/badge.png)](https://www.versioneye.com/user/projects/52caa904ec1375acc6000162)
 
 # Prerequisites #
 
