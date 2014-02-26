@@ -1,5 +1,5 @@
 {
-    "name": "spomky/role-hierarchy-bundle",
+    "name": "spomky-labs/role-hierarchy-bundle",
     "type": "symfony-bundle",
     "description": "Symfony2 Role Hierarchy Bundle",
     "keywords": ["role", "hierarchy"],
