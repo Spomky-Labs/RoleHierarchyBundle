@@ -1,13 +1,13 @@
 Role Hierarchy
 ==============
 
-[![Build Status](https://secure.travis-ci.org/Spomky/SpomkyRoleHierarchy.png?branch=master)](http://travis-ci.org/Spomky/SpomkyRoleHierarchy)
-[![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/Spomky/SpomkyRoleHierarchy/badges/quality-score.png?s=b3360fe0df34dad0beece620024575011f7a2e21)](https://scrutinizer-ci.com/g/Spomky/SpomkyRoleHierarchy/)
-[![Code Coverage](https://scrutinizer-ci.com/g/Spomky/SpomkyRoleHierarchy/badges/coverage.png?s=c6d7d9205836bbf0fb31ac5b900e5a504f4e1da7)](https://scrutinizer-ci.com/g/Spomky/SpomkyRoleHierarchy/)
+[![Build Status](https://travis-ci.org/Spomky-Labs/SpomkyRoleHierarchy.png?branch=master)](https://travis-ci.org/Spomky-Labs/SpomkyRoleHierarchy)
+[![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/Spomky-Labs/SpomkyRoleHierarchy/badges/quality-score.png?s=0e87558488def68be0b724ff87cd5d2b43cc44e8)](https://scrutinizer-ci.com/g/Spomky-Labs/SpomkyRoleHierarchy/)
+[![Code Coverage](https://scrutinizer-ci.com/g/Spomky-Labs/SpomkyRoleHierarchy/badges/coverage.png?s=ef8e9de2e1b2909b9a84551624e4b82139a46676)](https://scrutinizer-ci.com/g/Spomky-Labs/SpomkyRoleHierarchy/)
 
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/087e8177-3756-4df4-bbea-d29e9886ffef/big.png)](https://insight.sensiolabs.com/projects/087e8177-3756-4df4-bbea-d29e9886ffef)
 
-[![Dependency Status](https://www.versioneye.com/user/projects/52caa904ec1375acc6000162/badge.png)](https://www.versioneye.com/user/projects/52caa904ec1375acc6000162)
+[![Dependency Status](https://www.versioneye.com/user/projects/530b13f7ec1375fc8d000008/badge.png)](https://www.versioneye.com/user/projects/530b13f7ec1375fc8d000008)
 
 # Prerequisites #
 
