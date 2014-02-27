@@ -30,7 +30,7 @@ The preferred way to install this bundle is to rely on Composer. Just check on P
 	{
 	    "require": {
 	        // ...
-	        "spomky/role-hierarchy-bundle": "dev-master"
+	        "spomky-labs/role-hierarchy-bundle": "dev-master"
 	    }
 	}
 
