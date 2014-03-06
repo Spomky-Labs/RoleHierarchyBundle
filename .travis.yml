@@ -4,12 +4,29 @@ php:
   - 5.3
   - 5.4
   - 5.5
+    - hhvm
+
+matrix:
+    allow_failures:
+        - php: hhvm
+
+env:
+    - SYMFONY_VERSION=2.4.*
+    - SYMFONY_VERSION=2.5.*@dev
 
 before_script:
-  - curl -s http://getcomposer.org/installer | php
-  - php composer.phar install --dev --no-interaction
+    - curl -s http://getcomposer.org/installer | php
+    - php composer.phar require symfony/class-loader:${SYMFONY_VERSION} --no-update
+    - php composer.phar require symfony/yaml:${SYMFONY_VERSION} --no-update
+    - php composer.phar require symfony/security-bundle:${SYMFONY_VERSION} --no-update
+    - php composer.phar require symfony/finder:${SYMFONY_VERSION} --no-update
+    - php composer.phar require symfony/browser-kit:${SYMFONY_VERSION} --no-update
+    - php composer.phar require symfony/expression-language:${SYMFONY_VERSION} --no-update
+    - php composer.phar require symfony/framework-bundle:${SYMFONY_VERSION} --no-update
+    - php composer.phar require symfony/event-dispatcher:${SYMFONY_VERSION} --no-update
+    - php composer.phar install --dev --no-interaction
 
-phpunit: phpunit --prefer-dist --dev
+phpunit: phpunit --dev
 
 script:
   - mkdir -p build/logs
