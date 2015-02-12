@@ -20,7 +20,7 @@ class UserProvider implements UserProviderInterface
 
     public function loadUserByUsername($username)
     {
-        $user = $this->user_manager->getEndUser($username);
+        $user = $this->user_manager->getUser($username);
 
         if ($user) {
             return $user;
@@ -40,6 +40,6 @@ class UserProvider implements UserProviderInterface
 
     public function supportsClass($class)
     {
-        return $class === 'SpomkyLabs\OAuth2ServerAuthorizationEndpointBundle\Tests\Functional\TestBundle\Entity\User';
+        return $class === 'SpomkyLabs\TestRoleHierarchyBundle\Entity\User';
     }
 }

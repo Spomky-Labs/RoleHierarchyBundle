@@ -2,6 +2,8 @@
 
 namespace SpomkyLabs\TestRoleHierarchyBundle\Entity;
 
+use Symfony\Component\Security\Core\User\UserProviderInterface;
+
 class UserManager
 {
     protected $users = array();
@@ -18,7 +20,7 @@ class UserManager
         return $enduser->getPassword() === $password;
     }
 
-    public function getEndUser($username)
+    public function getUser($username)
     {
         return isset($this->users[$username]) ? $this->users[$username] : null;
     }

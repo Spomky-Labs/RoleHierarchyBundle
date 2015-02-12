@@ -27,7 +27,7 @@ class FeatureContext extends MinkContext implements SnippetAcceptingContext
 
         $session = $client->getContainer()->get('session');
 
-        $user = $this->kernel->getContainer()->get('test_bundle.user_manager')->getEndUser($username);
+        $user = $this->kernel->getContainer()->get('test_bundle.user_manager')->getUser($username);
 
         $token = new UsernamePasswordToken($user, null, 'main', $user->getRoles());
         $session->set('_security_main', serialize($token));
