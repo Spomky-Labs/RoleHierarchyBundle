@@ -1,37 +1,34 @@
 <?php
 
-namespace Spomky\RoleHierarchyBundle\Model;
+namespace SpomkyLabs\RoleHierarchyBundle\Model;
 
-use Doctrine\ORM\EntityManager;
+use Doctrine\Common\Persistence\ManagerRegistry;
 
 class RoleManager implements RoleManagerInterface
 {
-    /**
-     * @var \Doctrine\ORM\EntityManager
-     */
-    protected $em;
+    protected $entity_manager;
+    protected $entity_repository;
 
-    /**
-     * @var \Doctrine\ORM\EntityRepository
-     */
-    protected $repository;
-
-    public function __construct(EntityManager $em, $class) {
-        $this->em = $em;
-        $this->repository = $em->getRepository($class);
+    public function __construct(ManagerRegistry $manager_registry, $class)
+    {
+        $this->class = $class;
+        $this->entity_manager = $manager_registry->getManagerForClass($class);
+        $this->entity_repository = $this->entity_manager->getRepository($class);
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getRepository() {
-        return $this->repository;
+    public function getRepository()
+    {
+        return $this->entity_repository;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getRoles() {
+    public function getRoles()
+    {
         return $this->getRepository()->findAll();
     }
 }

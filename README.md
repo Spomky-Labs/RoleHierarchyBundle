@@ -1,18 +1,20 @@
 Role Hierarchy
 ==============
 
-[![Build Status](https://travis-ci.org/Spomky-Labs/SpomkyRoleHierarchy.png?branch=master)](https://travis-ci.org/Spomky-Labs/SpomkyRoleHierarchy)
 [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/Spomky-Labs/SpomkyRoleHierarchy/badges/quality-score.png?s=0e87558488def68be0b724ff87cd5d2b43cc44e8)](https://scrutinizer-ci.com/g/Spomky-Labs/SpomkyRoleHierarchy/)
-[![Code Coverage](https://scrutinizer-ci.com/g/Spomky-Labs/SpomkyRoleHierarchy/badges/coverage.png?s=ef8e9de2e1b2909b9a84551624e4b82139a46676)](https://scrutinizer-ci.com/g/Spomky-Labs/SpomkyRoleHierarchy/)
+[![Build Status](https://travis-ci.org/Spomky-Labs/SpomkyRoleHierarchy.png?branch=master)](https://travis-ci.org/Spomky-Labs/SpomkyRoleHierarchy)
+[![HHVM Status](http://hhvm.h4cc.de/badge/Spomky-Labs/SpomkyRoleHierarchy.svg)](http://hhvm.h4cc.de/package/Spomky-Labs/SpomkyRoleHierarchy)
 
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/087e8177-3756-4df4-bbea-d29e9886ffef/big.png)](https://insight.sensiolabs.com/projects/087e8177-3756-4df4-bbea-d29e9886ffef)
 
-[![Dependency Status](https://www.versioneye.com/user/projects/530b13f7ec1375fc8d000008/badge.png)](https://www.versioneye.com/user/projects/530b13f7ec1375fc8d000008)
+[![Latest Stable Version](https://poser.pugx.org/Spomky-Labs/SpomkyRoleHierarchy/v/stable.png)](https://packagist.org/packages/Spomky-Labs/SpomkyRoleHierarchy)
+[![Total Downloads](https://poser.pugx.org/Spomky-Labs/SpomkyRoleHierarchy/downloads.png)](https://packagist.org/packages/Spomky-Labs/SpomkyRoleHierarchy)
+[![Latest Unstable Version](https://poser.pugx.org/Spomky-Labs/SpomkyRoleHierarchy/v/unstable.png)](https://packagist.org/packages/Spomky-Labs/SpomkyRoleHierarchy)
+[![License](https://poser.pugx.org/Spomky-Labs/SpomkyRoleHierarchy/license.png)](https://packagist.org/packages/Spomky-Labs/SpomkyRoleHierarchy)
 
 # Prerequisites #
 
 This version of the bundle requires Symfony 2.1.
-It only supports Doctrine ORM.
 
 # Installation #
 
@@ -45,7 +47,7 @@ Finally, enable the bundle in the kernel:
 	{
 	    $bundles = array(
 	        // ...
-	        new Spomky\RoleHierarchyBundle\SpomkyRoleHierarchyBundle(),
+	        new SpomkyLabs\RoleHierarchyBundle\SpomkyRoleHierarchyBundle(),
 	    );
 	}
 
@@ -75,7 +77,7 @@ If you are persisting your data via the Doctrine ORM, then your classe should li
 	
 	namespace Acme\RoleBundle\Entity;
 	
-	use Spomky\RoleHierarchyBundle\Model\Role as BaseRole;
+	use SpomkyLabs\RoleHierarchyBundle\Model\Role as BaseRole;
 	use Doctrine\ORM\Mapping as ORM;
 	
 	/**
@@ -138,7 +140,7 @@ If you are persisting your data via the Doctrine ORM, then your classe should li
 	    db_driver: orm       # Driver available: orm
 	    role_class:          Acme\RoleBundle\Entity\Role
 
-If you have your own roles manager, you can use it. It just needs to implement Spomky\RoleHierarchyBundle\Model\RoleManagerInterface.
+If you have your own roles manager, you can use it. It just needs to implement SpomkyLabs\RoleHierarchyBundle\Model\RoleManagerInterface.
 
 	# app/config/config.yml
 	spomky_role_hierarchy:

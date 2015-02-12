@@ -1,6 +1,6 @@
 <?php
 
-namespace Spomky\RoleHierarchyBundle\Model;
+namespace SpomkyLabs\RoleHierarchyBundle\Model;
 
 interface RoleManagerInterface
 {

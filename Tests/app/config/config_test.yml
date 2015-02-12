@@ -1,0 +1,37 @@
+imports:
+    - { resource: security.yml }
+
+framework:
+    test: ~
+    secret: test
+    translator: ~
+    form: ~
+    validation:
+        enable_annotations: false
+    session:
+        storage_id: session.storage.mock_file
+    router:
+        resource: "%kernel.root_dir%/config/routing.yml"
+    templating:
+        engines: ['twig']
+
+doctrine:
+    dbal:
+        driver:   pdo_sqlite
+        host:     localhost
+        port:
+        path:     "%kernel.cache_dir%/project.db"
+        user:     root
+        password:
+        charset:  UTF8
+    orm:
+        default_entity_manager: default
+        entity_managers:
+            default:
+                connection: default
+                mappings:
+                    SpomkyLabsTestRoleHierarchyBundle:  ~
+                    SpomkyLabsRoleHierarchyBundle:  ~
+
+spomkylabs_role_hierarchy:
+    role_class: SpomkyLabs\TestRoleHierarchyBundle\Entity\Role

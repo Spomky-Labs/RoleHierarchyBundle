@@ -1,0 +1,22 @@
+default:
+    autoload:
+        '': %paths.base%/Features/bootstrap
+    extensions:
+        Behat\Symfony2Extension:
+            kernel:
+                env: test
+                debug: true
+                path: Tests/app/AppKernel.php
+                bootstrap: vendor/autoload.php
+        VIPSoft\DoctrineDataFixturesExtension\Extension:
+            lifetime:    feature
+            autoload:    true
+        Behat\MinkExtension:
+            sessions:
+                default:
+                    symfony2: ~
+    suites:
+        test_suite:
+            type: symfony_bundle
+            mink_session: default
+            bundle: SpomkyLabsRoleHierarchyBundle

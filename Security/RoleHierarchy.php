@@ -1,10 +1,10 @@
 <?php
 
-namespace Spomky\RoleHierarchyBundle\Security;
+namespace SpomkyLabs\RoleHierarchyBundle\Security;
 
 use Symfony\Component\Security\Core\Role\RoleHierarchy as BaseRoleHierarchy;
-use Spomky\RoleHierarchyBundle\Model\RoleManagerInterface;
-use Spomky\RoleHierarchyBundle\Model\RoleInterface;
+use SpomkyLabs\RoleHierarchyBundle\Model\RoleManagerInterface;
+use SpomkyLabs\RoleHierarchyBundle\Model\RoleInterface;
 
 class RoleHierarchy extends BaseRoleHierarchy
 {
@@ -21,7 +21,7 @@ class RoleHierarchy extends BaseRoleHierarchy
         $hierarchy = array();
         $roles = $this->rm->getRoles();
         foreach ($roles as $role) {
-            if ($role instanceof RoleInterface){
+            if ($role instanceof RoleInterface) {
                 if ($role->getParent()) {
                     if (!isset($hierarchy[$role->getParent()->getName()])) {
                         $hierarchy[$role->getParent()->getName()] = array();
@@ -34,6 +34,7 @@ class RoleHierarchy extends BaseRoleHierarchy
                 }
             }
         }
+
         return $hierarchy;
     }
 }

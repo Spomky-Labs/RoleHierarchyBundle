@@ -12,20 +12,38 @@
     ],
     "require": {
         "php": ">=5.3.3",
-        "symfony/framework-bundle": "~2.1"
+        "symfony/security-bundle": "~2.3",
+        "doctrine/doctrine-bundle": "~1.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "3.7.*",
-        "satooshi/php-coveralls": "dev-master",
-        "symfony/class-loader": "~2.1",
-        "symfony/yaml": "~2.1",
-        "doctrine/doctrine-bundle": "~1.0",
-        "doctrine/orm": ">=2.2,<2.5-dev"
+        "symfony/framework-bundle": "~2.3",
+        "symfony/class-loader": "~2.3",
+        "symfony/yaml": "~2.3",
+        "symfony/finder": "~2.3",
+        "symfony/form": "~2.3",
+        "symfony/twig-bundle": "~2.3",
+        "symfony/validator": "~2.3",
+
+        "doctrine/doctrine-fixtures-bundle": "*@dev",
+        "vipsoft/doctrine-data-fixtures-extension": "3.*@dev",
+        "behat/behat": "3.*",
+        "behat/symfony2-extension": "2.0.x-dev",
+        "behat/mink": "*",
+        "behat/mink-extension": "*",
+        "behat/mink-browserkit-driver":  "*",
+        "doctrine/orm": ">=2.2.3,<2.5-dev"
     },
     "suggest": {
     },
     "autoload": {
-        "psr-0": { "Spomky\\RoleHierarchyBundle": "" }
+        "psr-4": { "SpomkyLabs\\RoleHierarchyBundle\\": "" }
     },
-    "target-dir": "Spomky/RoleHierarchyBundle"
+    "autoload-dev": {
+        "psr-4": { "SpomkyLabs\\TestRoleHierarchyBundle\\": "Tests/TestRoleHierarchyBundle/" }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.0.x-dev"
+        }
+    }
 }
