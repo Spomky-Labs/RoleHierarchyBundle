@@ -1,16 +1,16 @@
 Role Hierarchy
 ==============
 
-[![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/Spomky-Labs/SpomkyRoleHierarchy/badges/quality-score.png?s=0e87558488def68be0b724ff87cd5d2b43cc44e8)](https://scrutinizer-ci.com/g/Spomky-Labs/SpomkyRoleHierarchy/)
-[![Build Status](https://travis-ci.org/Spomky-Labs/SpomkyRoleHierarchy.png?branch=master)](https://travis-ci.org/Spomky-Labs/SpomkyRoleHierarchy)
-[![HHVM Status](http://hhvm.h4cc.de/badge/Spomky-Labs/SpomkyRoleHierarchy.svg)](http://hhvm.h4cc.de/package/Spomky-Labs/SpomkyRoleHierarchy)
+[![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/Spomky-Labs/RoleHierarchyBundle/badges/quality-score.png?s=0e87558488def68be0b724ff87cd5d2b43cc44e8)](https://scrutinizer-ci.com/g/Spomky-Labs/RoleHierarchyBundle/)
+[![Build Status](https://travis-ci.org/Spomky-Labs/RoleHierarchyBundle.png?branch=master)](https://travis-ci.org/Spomky-Labs/RoleHierarchyBundle)
+[![HHVM Status](http://hhvm.h4cc.de/badge/Spomky-Labs/RoleHierarchyBundle.svg)](http://hhvm.h4cc.de/package/Spomky-Labs/RoleHierarchyBundle)
 
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/087e8177-3756-4df4-bbea-d29e9886ffef/big.png)](https://insight.sensiolabs.com/projects/087e8177-3756-4df4-bbea-d29e9886ffef)
 
-[![Latest Stable Version](https://poser.pugx.org/Spomky-Labs/SpomkyRoleHierarchy/v/stable.png)](https://packagist.org/packages/Spomky-Labs/SpomkyRoleHierarchy)
-[![Total Downloads](https://poser.pugx.org/Spomky-Labs/SpomkyRoleHierarchy/downloads.png)](https://packagist.org/packages/Spomky-Labs/SpomkyRoleHierarchy)
-[![Latest Unstable Version](https://poser.pugx.org/Spomky-Labs/SpomkyRoleHierarchy/v/unstable.png)](https://packagist.org/packages/Spomky-Labs/SpomkyRoleHierarchy)
-[![License](https://poser.pugx.org/Spomky-Labs/SpomkyRoleHierarchy/license.png)](https://packagist.org/packages/Spomky-Labs/SpomkyRoleHierarchy)
+[![Latest Stable Version](https://poser.pugx.org/spomky-labs/role-hierarchy-bundle/v/stable.png)](https://packagist.org/packages/spomky-labs/role-hierarchy-bundle)
+[![Total Downloads](https://poser.pugx.org/spomky-labs/role-hierarchy-bundle/downloads.png)](https://packagist.org/packages/spomky-labs/role-hierarchy-bundle)
+[![Latest Unstable Version](https://poser.pugx.org/spomky-labs/role-hierarchy-bundle/v/unstable.png)](https://packagist.org/packages/spomky-labs/role-hierarchy-bundle)
+[![License](https://poser.pugx.org/spomky-labs/role-hierarchy-bundle/license.png)](https://packagist.org/packages/spomky-labs/role-hierarchy-bundle)
 
 # Prerequisites #
 
