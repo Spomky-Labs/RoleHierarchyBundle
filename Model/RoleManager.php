@@ -6,6 +6,7 @@ use Doctrine\Common\Persistence\ManagerRegistry;
 
 class RoleManager implements RoleManagerInterface
 {
+    protected $class;
     protected $entity_manager;
     protected $entity_repository;
 
@@ -19,7 +20,15 @@ class RoleManager implements RoleManagerInterface
     /**
      * {@inheritdoc}
      */
-    public function getRepository()
+    public function getEntityManager()
+    {
+        return $this->entity_manager;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getEntityRepository()
     {
         return $this->entity_repository;
     }
@@ -29,6 +38,14 @@ class RoleManager implements RoleManagerInterface
      */
     public function getRoles()
     {
-        return $this->getRepository()->findAll();
+        return $this->getEntityRepository()->findAll();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getClass()
+    {
+        return $this->class;
     }
 }

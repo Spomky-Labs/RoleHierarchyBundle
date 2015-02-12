@@ -12,6 +12,7 @@ default:
             lifetime:    feature
             autoload:    true
         Behat\MinkExtension:
+            base_url: 'https://local.test/'
             sessions:
                 default:
                     symfony2: ~

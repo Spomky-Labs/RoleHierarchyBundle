@@ -12,7 +12,7 @@ class Role implements RoleInterface
     {
         return $this->id;
     }
-    
+
     public function getName()
     {
         return $this->name;

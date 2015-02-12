@@ -7,5 +7,8 @@
         <many-to-one field="parent" target-entity="SpomkyLabs\TestRoleHierarchyBundle\Entity\Role" nullable="true">
             <join-column name="parent_id" referenced-column-name="id" />
         </many-to-one>
+        <constraint name="Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity">
+            <option name="fields">name</option>
+        </constraint>
     </entity>
 </doctrine-mapping>

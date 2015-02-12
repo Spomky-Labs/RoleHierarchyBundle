@@ -5,15 +5,15 @@ framework:
     test: ~
     secret: test
     translator: ~
-    form: ~
+#    form: ~
     validation:
         enable_annotations: false
     session:
         storage_id: session.storage.mock_file
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
-    templating:
-        engines: ['twig']
+#    templating:
+#        engines: ['twig']
 
 doctrine:
     dbal:
@@ -35,3 +35,4 @@ doctrine:
 
 spomkylabs_role_hierarchy:
     role_class: SpomkyLabs\TestRoleHierarchyBundle\Entity\Role
+    role_manager: test_bundle.role_manager

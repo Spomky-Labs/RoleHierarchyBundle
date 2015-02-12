@@ -1,10 +1,109 @@
 Feature: Security options
 
-  Scenario: X-Frame-Options is set in the response
+  Scenario: User john is not a SuperAdmin
     Given I am logged in as "john"
-    And I add key "client_id" with value "foo" in the query parameter
-    And I add key "scope" with value "scope1 scope2" in the query parameter
-    And I add key "response_type" with value "foo_type" in the query parameter
-    And I add key "redirect_uri" with value "https://oauth2.test/redirect_uri" in the query parameter
-    And I am on the page "https://oauth2.test/oauth/v2/authorization"
-    Then the response header "X-Frame-Options" value is "DENY"
+    And I am on the page "https://local.test/"
+    When I want to verify if I am granted "SuperAdmin"
+    Then I should get false
+
+  Scenario: User john is not an Admin
+    Given I am logged in as "john"
+    And I am on the page "https://local.test/"
+    When I want to verify if I am granted "Admin"
+    Then I should get false
+
+  Scenario: User john is not a Supervisor
+    Given I am logged in as "john"
+    And I am on the page "https://local.test/"
+    When I want to verify if I am granted "Supervisor"
+    Then I should get true
+
+  Scenario: User john is not a Manager
+    Given I am logged in as "john"
+    And I am on the page "https://local.test/"
+    When I want to verify if I am granted "Manager"
+    Then I should get false
+
+  Scenario: User john is not an Operator
+    Given I am logged in as "john"
+    And I am on the page "https://local.test/"
+    When I want to verify if I am granted "Operator"
+    Then I should get true
+
+  Scenario: User john is not a User
+    Given I am logged in as "john"
+    And I am on the page "https://local.test/"
+    When I want to verify if I am granted "User"
+    Then I should get false
+
+  Scenario: User ben is not a SuperAdmin
+    Given I am logged in as "ben"
+    And I am on the page "https://local.test/"
+    When I want to verify if I am granted "SuperAdmin"
+    Then I should get false
+
+  Scenario: User ben is not an Admin
+    Given I am logged in as "ben"
+    And I am on the page "https://local.test/"
+    When I want to verify if I am granted "Admin"
+    Then I should get false
+
+  Scenario: User ben is not a Supervisor
+    Given I am logged in as "ben"
+    And I am on the page "https://local.test/"
+    When I want to verify if I am granted "Supervisor"
+    Then I should get false
+
+  Scenario: User ben is not a Manager
+    Given I am logged in as "ben"
+    And I am on the page "https://local.test/"
+    When I want to verify if I am granted "Manager"
+    Then I should get true
+
+  Scenario: User ben is not an Operator
+    Given I am logged in as "ben"
+    And I am on the page "https://local.test/"
+    When I want to verify if I am granted "Operator"
+    Then I should get false
+
+  Scenario: User ben is not a User
+    Given I am logged in as "ben"
+    And I am on the page "https://local.test/"
+    When I want to verify if I am granted "User"
+    Then I should get true
+
+  Scenario: User ian is not a SuperAdmin
+    Given I am logged in as "ian"
+    And I am on the page "https://local.test/"
+    When I want to verify if I am granted "SuperAdmin"
+    Then I should get true
+
+  Scenario: User ian is not an Admin
+    Given I am logged in as "ian"
+    And I am on the page "https://local.test/"
+    When I want to verify if I am granted "Admin"
+    Then I should get true
+
+  Scenario: User ian is not a Supervisor
+    Given I am logged in as "ian"
+    And I am on the page "https://local.test/"
+    When I want to verify if I am granted "Supervisor"
+    Then I should get true
+
+  Scenario: User ian is not a Manager
+    Given I am logged in as "ian"
+    And I am on the page "https://local.test/"
+    When I want to verify if I am granted "Manager"
+    Then I should get true
+
+  Scenario: User ian is not an Operator
+    Given I am logged in as "ian"
+    And I am on the page "https://local.test/"
+    When I want to verify if I am granted "Operator"
+    Then I should get true
+
+  Scenario: User ian is not a User
+    Given I am logged in as "ian"
+    And I am on the page "https://local.test/"
+    When I want to verify if I am granted "User"
+    Then I should get true

@@ -1,0 +1,4 @@
+hello:
+    path: /
+    defaults:
+        _controller: SpomkyLabsTestRoleHierarchyBundle:Hello:index

@@ -9,7 +9,7 @@ class Configuration implements ConfigurationInterface
 {
     private $alias;
 
-     /**
+    /**
      * @param string $alias
      */
     public function __construct($alias)
@@ -24,7 +24,6 @@ class Configuration implements ConfigurationInterface
     {
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('spomkylabs_role_hierarchy');
-
 
         $rootNode
             ->children()

@@ -7,9 +7,8 @@ use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\Common\DataFixtures\AbstractFixture;
-use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 
-class LoadAuthCodeData extends AbstractFixture implements FixtureInterface, ContainerAwareInterface, OrderedFixtureInterface
+class LoadRoleData extends AbstractFixture implements FixtureInterface, ContainerAwareInterface
 {
     /**
      * @var ContainerInterface
@@ -29,27 +28,46 @@ class LoadAuthCodeData extends AbstractFixture implements FixtureInterface, Cont
      */
     public function load(ObjectManager $manager)
     {
-        /*$code_manager = $this->container->get('spomky_oauth2_server_auth_code_test.auth_code_manager');
+        $role_manager = $this->container->get('spomkylabs_role_hierarchy.role_manager');
 
-        foreach ($this->getAuthCodes() as $authcode) {
-            $code = $code_manager->newAuthCode();
-            $code->setResourceOwner($authcode['resource_owner'])
-                 ->setClient($authcode['client'])
-                 ->setCode($authcode['code'])
-                 ->setScope($authcode['scope'])
-                 ->setRedirectUri($authcode['redirect_uri'])
-                 ->setExpiresAt($authcode['expires_at']);
+        foreach ($this->getRoles() as $role) {
+            $entity = $role_manager->createRole();
+            $parent = null === $role['parent'] ? null : $this->getReference('role-'.$role['parent']);
+            $entity->setName($role['name'])
+                   ->setParent($parent);
 
-            $code_manager->saveAuthCode($code);
-            $this->addReference('authcode-'.$authcode['code'], $code);
-        }*/
+            $role_manager->saveRole($entity);
+            $this->addReference('role-'.$role['name'], $entity);
+        }
     }
 
-    /**
-     * {@inheritDoc}
-     */
-    public function getOrder()
+    protected function getRoles()
     {
-        return 1; // the order in which fixtures will be loaded
+        return array(
+            array(
+                "name" => "SuperAdmin",
+                "parent" => null,
+            ),
+            array(
+                "name" => "Admin",
+                "parent" => "SuperAdmin",
+            ),
+            array(
+                "name" => "Supervisor",
+                "parent" => "Admin",
+            ),
+            array(
+                "name" => "Manager",
+                "parent" => "Admin",
+            ),
+            array(
+                "name" => "Operator",
+                "parent" => "Supervisor",
+            ),
+            array(
+                "name" => "User",
+                "parent" => "Manager",
+            ),
+        );
     }
 }
