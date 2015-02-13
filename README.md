@@ -34,7 +34,7 @@ Installation is a quick 4 steps process:
 
 ##Step 1: Install the bundle##
 
-The preferred way to install this bundle is to rely on Composer. Just check on Packagist the version you want to install (in the following example, we used "dev-master") and add it to your composer.json:
+The preferred way to install this bundle is to rely on Composer:
 
 	composer require spomky-labs/role-hierarchy-bundle "~2.0.0"
 
@@ -56,26 +56,28 @@ Finally, enable the bundle in the kernel:
 	}
 ```
 
-##Step 3: Create model classe##
+##Step 3: Create model class##
 
-This bundle needs to persist roless to a database:
+This bundle needs to persist roles to a database:
 
-Your first job, then, is to create this classe for your application.
-This classe can look and act however you want: add any properties or methods you find useful.
+Your first job, then, is to create a role class for your application.
+This class can look and act however you want: add any properties or methods you find useful.
 
 There is just a few requirements:
 
 * They must be sure that role names are unique
 * They should follow naming conventions
 
-In the following sections, you'll see an example of how your classe should look.
+In the following sections, you'll see an example of how your class should look.
 
-Your classe can live inside any bundle in your application.
-For example, if you work at "Acme" company, then you might create a bundle called AcmeRoleBundle and place your classes in it.
+Your class can live inside any bundle in your application.
+For example, if you work at "Acme" company, then you might create a bundle called AcmeRoleBundle and place your classs in it.
+
+This bundle is able to support Doctrine ORM, ODM, CouchDB or MongoDB. Please note that only ORM has been tested.
 
 ###Doctrine ORM###
 
-If you are persisting your data via the Doctrine ORM, then your classe should live in the Entity namespace of your bundle and look like this to start:
+If you are persisting your data via the Doctrine ORM, then your class should live in the Entity namespace of your bundle and look like this to start:
 
 ```php
 
@@ -115,6 +117,18 @@ If you are persisting your data via the Doctrine ORM, then your classe should li
 	    }
 	}
 ```
+
+###Doctrine ODM###
+
+To be written
+
+###CouchDB###
+
+To be written
+
+###DMongoDB###
+
+To be written
 
 ##Step 4: Configure your application##
 
