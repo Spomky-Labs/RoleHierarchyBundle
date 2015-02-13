@@ -7,16 +7,6 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
 
 class Configuration implements ConfigurationInterface
 {
-    private $alias;
-
-    /**
-     * @param string $alias
-     */
-    public function __construct($alias)
-    {
-        $this->alias = $alias;
-    }
-
     /**
      * {@inheritDoc}
      */

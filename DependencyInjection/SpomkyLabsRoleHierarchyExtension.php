@@ -31,7 +31,7 @@ class SpomkyLabsRoleHierarchyExtension extends Extension
     public function load(array $configs, ContainerBuilder $container)
     {
         $processor     = new Processor();
-        $configuration = new Configuration($this->getAlias());
+        $configuration = new Configuration();
 
         $config = $processor->processConfiguration($configuration, $configs);
 
