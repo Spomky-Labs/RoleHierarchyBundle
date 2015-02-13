@@ -139,7 +139,7 @@ To be written
 	    role_class:          Acme\RoleBundle\Entity\Role
 ```
 
-If you have your own roles manager, you can use it. It just needs to implement SpomkyLabs\RoleHierarchyBundle\Model\RoleManagerInterface.
+If you have your own roles manager, you can use it. It just needs to implement `SpomkyLabs\RoleHierarchyBundle\Model\RoleManagerInterface`.
 
 ```yml
 
