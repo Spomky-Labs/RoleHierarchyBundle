@@ -42,7 +42,7 @@ class FeatureContext extends MinkContext implements SnippetAcceptingContext
     public function iAmOnThePage($uri)
     {
         $client = $this->getSession()->getDriver()->getClient();
-        $client->request("GET",$uri);
+        $client->request("GET", $uri);
     }
 
     /**

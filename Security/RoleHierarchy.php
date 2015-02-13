@@ -13,7 +13,9 @@ class RoleHierarchy extends BaseRoleHierarchy
     public function __construct(RoleManagerInterface $rm)
     {
         $this->rm = $rm;
-        parent::__construct($this->buildRolesTree());
+
+        $map = $this->buildRolesTree();
+        parent::__construct($map);
     }
 
     protected function buildRolesTree()

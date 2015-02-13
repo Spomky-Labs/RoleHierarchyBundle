@@ -45,28 +45,28 @@ class LoadRoleData extends AbstractFixture implements FixtureInterface, Containe
     {
         return array(
             array(
-                "name" => "SuperAdmin",
+                "name" => "ROLE_SUPERADMIN",
                 "parent" => null,
             ),
             array(
-                "name" => "Admin",
-                "parent" => "SuperAdmin",
+                "name" => "ROLE_ADMIN",
+                "parent" => "ROLE_SUPERADMIN",
             ),
             array(
-                "name" => "Supervisor",
-                "parent" => "Admin",
+                "name" => "ROLE_SUPERVISOR",
+                "parent" => "ROLE_ADMIN",
             ),
             array(
-                "name" => "Manager",
-                "parent" => "Admin",
+                "name" => "ROLE_MANAGER",
+                "parent" => "ROLE_ADMIN",
             ),
             array(
-                "name" => "Operator",
-                "parent" => "Supervisor",
+                "name" => "ROLE_OPERATOR",
+                "parent" => "ROLE_SUPERVISOR",
             ),
             array(
-                "name" => "User",
-                "parent" => "Manager",
+                "name" => "ROLE_USER",
+                "parent" => "ROLE_MANAGER",
             ),
         );
     }

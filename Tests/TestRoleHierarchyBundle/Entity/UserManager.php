@@ -2,7 +2,6 @@
 
 namespace SpomkyLabs\TestRoleHierarchyBundle\Entity;
 
-use Symfony\Component\Security\Core\User\UserProviderInterface;
 
 class UserManager
 {
@@ -10,9 +9,9 @@ class UserManager
 
     public function __construct()
     {
-        $this->users['john'] = new User('john', 'doe', '0123456789', array('Supervisor'));
-        $this->users['ben']  = new User('ben',  'neb', '9876543210', array('Manager'));
-        $this->users['ian']  = new User('ian',  'nia', '0000000000', array('SuperAdmin'));
+        $this->users['john'] = new User('john', 'doe', '0123456789', array('ROLE_SUPERVISOR'));
+        $this->users['ben']  = new User('ben',  'neb', '9876543210', array('ROLE_MANAGER'));
+        $this->users['ian']  = new User('ian',  'nia', '0000000000', array('ROLE_SUPERADMIN'));
     }
 
     public function checkEndUserPasswordCredentials(EndUserInterface $enduser, $password)

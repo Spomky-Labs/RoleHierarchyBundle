@@ -3,7 +3,7 @@ Role Hierarchy
 
 [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/Spomky-Labs/RoleHierarchyBundle/badges/quality-score.png?s=0e87558488def68be0b724ff87cd5d2b43cc44e8)](https://scrutinizer-ci.com/g/Spomky-Labs/RoleHierarchyBundle/)
 [![Build Status](https://travis-ci.org/Spomky-Labs/RoleHierarchyBundle.png?branch=master)](https://travis-ci.org/Spomky-Labs/RoleHierarchyBundle)
-[![HHVM Status](http://hhvm.h4cc.de/badge/Spomky-Labs/RoleHierarchyBundle.svg)](http://hhvm.h4cc.de/package/Spomky-Labs/RoleHierarchyBundle)
+[![HHVM Status](http://hhvm.h4cc.de/badge/spomky-labs/role-hierarchy-bundle.svg)](http://hhvm.h4cc.de/package/spomky-labs/role-hierarchy-bundle)
 
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/dd715881-1645-4a67-8275-44d8acaa56b6/big.png)](https://insight.sensiolabs.com/projects/dd715881-1645-4a67-8275-44d8acaa56b6)
 
@@ -14,13 +14,20 @@ Role Hierarchy
 
 # Prerequisites #
 
-This version of the bundle requires Symfony 2.1.
+This version of the bundle requires:
+
+* Symfony 2.1+
+* PHP 5.3+
+
+It has been successfully tested using `PHP 5.4` to `PHP 5.6` and `HHVM`.
+
+Note: PHP 5.3 environment have not been but should work.
 
 # Installation #
 
 Installation is a quick 4 steps process:
 
-* Download SpomkyRoleHierarchyBundle
+* Install the bundle
 * Enable the Bundle
 * Create your model class
 * Configure the SpomkyRoleHierarchyBundle
@@ -29,16 +36,13 @@ Installation is a quick 4 steps process:
 
 The preferred way to install this bundle is to rely on Composer. Just check on Packagist the version you want to install (in the following example, we used "dev-master") and add it to your composer.json:
 
-	{
-	    "require": {
-	        // ...
-	        "spomky-labs/role-hierarchy-bundle": "dev-master"
-	    }
-	}
+	composer require spomky-labs/role-hierarchy-bundle "~2.0.0"
 
 ##Step 2: Enable the bundle##
 
 Finally, enable the bundle in the kernel:
+
+```php
 
 	<?php
 	// app/AppKernel.php
@@ -47,9 +51,10 @@ Finally, enable the bundle in the kernel:
 	{
 	    $bundles = array(
 	        // ...
-	        new SpomkyLabs\RoleHierarchyBundle\SpomkyRoleHierarchyBundle(),
+	        new SpomkyLabs\RoleHierarchyBundle\SpomkyLabsRoleHierarchyBundle(),
 	    );
 	}
+```
 
 ##Step 3: Create model classe##
 
@@ -72,12 +77,14 @@ For example, if you work at "Acme" company, then you might create a bundle calle
 
 If you are persisting your data via the Doctrine ORM, then your classe should live in the Entity namespace of your bundle and look like this to start:
 
+```php
+
 	<?php
 	// src/Acme/RoleBundle/Entity/Role.php
 	
 	namespace Acme\RoleBundle\Entity;
 	
-	use SpomkyLabs\RoleHierarchyBundle\Model\Role as BaseRole;
+	use SpomkyLabs\RoleHierarchyBundle\Entity\Role as Base;
 	use Doctrine\ORM\Mapping as ORM;
 	
 	/**
@@ -86,7 +93,7 @@ If you are persisting your data via the Doctrine ORM, then your classe should li
 	 * @ORM\Table(name="roles")
 	 * @ORM\Entity()
 	 */
-	class Role extends BaseRole
+	class Role extends Base
 	{
 	    /**
 	     * @var integer $id
@@ -98,13 +105,6 @@ If you are persisting your data via the Doctrine ORM, then your classe should li
 	    protected $id;
 	
 	    /**
-	     * @var string $name
-	     *
-	     * @ORM\Column(name="name", type="string", length=255)
-	     */
-	    protected $name;
-	
-	    /**
 	     * @ORM\ManyToOne(targetEntity="Role")
 	     * @ORM\JoinColumn(name="parent_id", referencedColumnName="id")
 	     **/
@@ -113,36 +113,24 @@ If you are persisting your data via the Doctrine ORM, then your classe should li
 	    public function getId() {
 	        return $this->id;
 	    }
-	
-	    public function setName($name) {
-	        $this->name = $name;
-	        return $this;
-	    }
-	
-	    public function setParent(Role $parent) {
-	        $this->parent = $parent;
-	        return $this;
-	    }
 	}
-
-###Propel###
-
-	Not supported yet
-
-###Doctrine ODM###
-
-	Not supported yet
+```
 
 ##Step 4: Configure your application##
 
+```yml
+
 	# app/config/config.yml
 	spomky_role_hierarchy:
-	    db_driver: orm       # Driver available: orm
 	    role_class:          Acme\RoleBundle\Entity\Role
+```
 
 If you have your own roles manager, you can use it. It just needs to implement SpomkyLabs\RoleHierarchyBundle\Model\RoleManagerInterface.
+
+```yml
 
 	# app/config/config.yml
 	spomky_role_hierarchy:
 	    ...
 	    role_manager: my.custom.role.manager
+```

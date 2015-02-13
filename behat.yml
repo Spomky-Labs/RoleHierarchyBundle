@@ -9,7 +9,7 @@ default:
                 path: Tests/app/AppKernel.php
                 bootstrap: vendor/autoload.php
         VIPSoft\DoctrineDataFixturesExtension\Extension:
-            lifetime:    feature
+            lifetime:    scenario
             autoload:    true
         Behat\MinkExtension:
             base_url: 'https://local.test/'

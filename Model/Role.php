@@ -22,4 +22,18 @@ class Role implements RoleInterface
     {
         return $this->parent;
     }
+    
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    public function setParent($parent)
+    {
+        $this->parent = $parent;
+
+        return $this;
+    }
 }
