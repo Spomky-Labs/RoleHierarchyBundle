@@ -135,7 +135,7 @@ To be written
 ```yml
 
 	# app/config/config.yml
-	spomky_role_hierarchy:
+	spomkylabs_role_hierarchy:
 	    role_class:          Acme\RoleBundle\Entity\Role
 ```
 
@@ -144,7 +144,7 @@ If you have your own roles manager, you can use it. It just needs to implement `
 ```yml
 
 	# app/config/config.yml
-	spomky_role_hierarchy:
+	spomkylabs_role_hierarchy:
 	    ...
 	    role_manager: my.custom.role.manager
 ```
