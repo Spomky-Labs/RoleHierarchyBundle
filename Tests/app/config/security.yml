@@ -2,9 +2,6 @@ security:
     encoders:
         Symfony\Component\Security\Core\User\UserInterface: plaintext
 
-    role_hierarchy:
-        ROLE_ADMIN: ROLE_USER
-
     providers:
         test_bundle:
             id: test_bundle.user_provider

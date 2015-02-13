@@ -23,7 +23,6 @@ class FeatureContext extends MinkContext implements SnippetAcceptingContext
     public function iAmAnLoggedInAs($username)
     {
         $client = $this->getSession()->getDriver()->getClient();
-        $client->getCookieJar()->set(new Cookie(session_name(), true));
 
         $session = $client->getContainer()->get('session');
 

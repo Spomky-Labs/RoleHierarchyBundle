@@ -20,13 +20,7 @@ before_script:
     - php composer.phar require symfony/yaml:${SYMFONY_VERSION} --no-update
     - php composer.phar require symfony/security-bundle:${SYMFONY_VERSION} --no-update
     - php composer.phar require symfony/framework-bundle:${SYMFONY_VERSION} --no-update
-    - php composer.phar install --dev --no-interaction
-
-phpunit: phpunit --dev
+    - php composer.phar update --dev --no-interaction
 
 script:
-  - mkdir -p build/logs
-  - php vendor/bin/phpunit -c phpunit.xml.dist
-
-after_script:
-  - php vendor/bin/coveralls -v
+  - php vendor/bin/behat
