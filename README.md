@@ -122,11 +122,11 @@ If you are persisting your data via the Doctrine ORM, then your class should liv
 
 To be written
 
-###CouchDB###
+###Couch DB###
 
 To be written
 
-###DMongoDB###
+###Mongo DB###
 
 To be written
 
