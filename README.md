@@ -28,11 +28,11 @@ Note: PHP 5.3 environment have not been but should work (tests fail because of t
 Installation is a quick 4 steps process:
 
 * Install the bundle
-* Enable the Bundle
+* Enable the bundle
 * Create your model class
-* Configure the SpomkyRoleHierarchyBundle
+* Configure the bundle
 
-##Step 1: Install SpomkyRoleHierarchyBundle##
+##Step 1: Install the bundle##
 
 The preferred way to install this bundle is to rely on Composer. Just check on Packagist the version you want to install (in the following example, we used "dev-master") and add it to your composer.json:
 
