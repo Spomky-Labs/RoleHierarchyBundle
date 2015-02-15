@@ -2,7 +2,6 @@
 
 namespace SpomkyLabs\TestRoleHierarchyBundle\Entity;
 
-
 class UserManager
 {
     protected $users = array();

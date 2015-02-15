@@ -48,7 +48,7 @@ class RoleManager implements RoleManagerInterface
     {
         return $this->class;
     }
-    
+
     public function createRole()
     {
         $class = $this->getClass();
