@@ -21,7 +21,7 @@ This version of the bundle requires:
 
 It has been successfully tested using `PHP 5.4` to `PHP 5.6` and `HHVM` under Symfony `2.3` to `2.6`.
 
-Note: PHP 5.3 environment have not been but should work (tests fail because of the use of traits introduced in PHP 5.4).
+Note: PHP 5.3 environment have not been tested but should work (tests only fail because of the use of traits introduced in PHP 5.4).
 
 # Installation #
 
