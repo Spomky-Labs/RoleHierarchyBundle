@@ -5,7 +5,7 @@ namespace SpomkyLabs\RoleHierarchyBundle\Model;
 interface RoleManagerInterface
 {
     /**
-     * @return \Doctrine\Common\Collections\ArrayCollection
+     * @return array
      */
     public function getRoles();
 
