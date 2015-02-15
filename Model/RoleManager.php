@@ -48,4 +48,19 @@ class RoleManager implements RoleManagerInterface
     {
         return $this->class;
     }
+    
+    public function createRole()
+    {
+        $class = $this->getClass();
+
+        return new $class();
+    }
+
+    public function saveRole(RoleInterface $role)
+    {
+        $this->getEntityManager()->persist($role);
+        $this->getEntityManager()->flush();
+
+        return $this;
+    }
 }

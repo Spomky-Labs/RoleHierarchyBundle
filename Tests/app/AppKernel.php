@@ -12,7 +12,6 @@ class AppKernel extends Kernel
             new Symfony\Bundle\SecurityBundle\SecurityBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
-            //new Symfony\Bundle\TwigBundle\TwigBundle(),
 
             new SpomkyLabs\RoleHierarchyBundle\SpomkyLabsRoleHierarchyBundle(),
             new SpomkyLabs\TestRoleHierarchyBundle\SpomkyLabsTestRoleHierarchyBundle(),

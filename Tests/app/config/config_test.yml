@@ -35,4 +35,3 @@ doctrine:
 
 spomkylabs_role_hierarchy:
     role_class: SpomkyLabs\TestRoleHierarchyBundle\Entity\Role
-    role_manager: test_bundle.role_manager
