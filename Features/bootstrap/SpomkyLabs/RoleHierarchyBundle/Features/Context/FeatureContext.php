@@ -2,20 +2,35 @@
 
 namespace SpomkyLabs\RoleHierarchyBundle\Features\Context;
 
-use Behat\Symfony2Extension\Context\KernelDictionary;
-use Behat\MinkExtension\Context\MinkContext;
+use Behat\Symfony2Extension\Context\KernelAwareContext;
 use Behat\Behat\Context\SnippetAcceptingContext;
+use Behat\MinkExtension\Context\MinkContext;
+use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Component\BrowserKit\Cookie;
 use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
 
 /**
  * Behat context class.
  */
-class FeatureContext extends MinkContext implements SnippetAcceptingContext
+class FeatureContext extends MinkContext implements KernelAwareContext, SnippetAcceptingContext
 {
-    use KernelDictionary;
-
+    private $kernel;
     private $result = null;
+
+    public function setKernel(KernelInterface $kernel)
+    {
+        $this->kernel = $kernel;
+
+        return $this;
+    }
+
+    /**
+     * @return \Symfony\Component\HttpKernel\KernelInterface
+     */
+    public function getKernel()
+    {
+        return $this->kernel;
+    }
 
     /**
      * @Given I am logged in as :username
@@ -26,7 +41,7 @@ class FeatureContext extends MinkContext implements SnippetAcceptingContext
 
         $session = $client->getContainer()->get('session');
 
-        $user = $this->kernel->getContainer()->get('test_bundle.user_manager')->getUser($username);
+        $user = $this->getKernel()->getContainer()->get('test_bundle.user_manager')->getUser($username);
 
         $token = new UsernamePasswordToken($user, null, 'main', $user->getRoles());
         $session->set('_security_main', serialize($token));
@@ -50,7 +65,7 @@ class FeatureContext extends MinkContext implements SnippetAcceptingContext
      */
     public function iWantToVerifyIfIsGranted($grant)
     {
-        $this->result = $this->getContainer()->get("security.context")->isGranted($grant);
+        $this->result = $this->getKernel()->getContainer()->get("security.context")->isGranted($grant);
     }
 
     /**
