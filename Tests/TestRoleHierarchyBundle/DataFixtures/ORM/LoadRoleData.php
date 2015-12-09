@@ -1,12 +1,21 @@
 <?php
 
+/*
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2014-2015 Spomky-Labs
+ *
+ * This software may be modified and distributed under the terms
+ * of the MIT license.  See the LICENSE file for details.
+ */
+
 namespace SpomkyLabs\TestRoleHierarchyBundle\DataFixtures\ORM;
 
+use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\FixtureInterface;
+use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Doctrine\Common\Persistence\ObjectManager;
-use Doctrine\Common\DataFixtures\AbstractFixture;
 
 class LoadRoleData extends AbstractFixture implements FixtureInterface, ContainerAwareInterface
 {
@@ -16,7 +25,7 @@ class LoadRoleData extends AbstractFixture implements FixtureInterface, Containe
     private $container;
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function setContainer(ContainerInterface $container = null)
     {
@@ -24,7 +33,7 @@ class LoadRoleData extends AbstractFixture implements FixtureInterface, Containe
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function load(ObjectManager $manager)
     {
@@ -43,31 +52,31 @@ class LoadRoleData extends AbstractFixture implements FixtureInterface, Containe
 
     protected function getRoles()
     {
-        return array(
-            array(
-                "name" => "ROLE_SUPERADMIN",
-                "parent" => null,
-            ),
-            array(
-                "name" => "ROLE_ADMIN",
-                "parent" => "ROLE_SUPERADMIN",
-            ),
-            array(
-                "name" => "ROLE_SUPERVISOR",
-                "parent" => "ROLE_ADMIN",
-            ),
-            array(
-                "name" => "ROLE_MANAGER",
-                "parent" => "ROLE_ADMIN",
-            ),
-            array(
-                "name" => "ROLE_OPERATOR",
-                "parent" => "ROLE_SUPERVISOR",
-            ),
-            array(
-                "name" => "ROLE_USER",
-                "parent" => "ROLE_MANAGER",
-            ),
-        );
+        return [
+            [
+                'name'   => 'ROLE_SUPERADMIN',
+                'parent' => null,
+            ],
+            [
+                'name'   => 'ROLE_ADMIN',
+                'parent' => 'ROLE_SUPERADMIN',
+            ],
+            [
+                'name'   => 'ROLE_SUPERVISOR',
+                'parent' => 'ROLE_ADMIN',
+            ],
+            [
+                'name'   => 'ROLE_MANAGER',
+                'parent' => 'ROLE_ADMIN',
+            ],
+            [
+                'name'   => 'ROLE_OPERATOR',
+                'parent' => 'ROLE_SUPERVISOR',
+            ],
+            [
+                'name'   => 'ROLE_USER',
+                'parent' => 'ROLE_MANAGER',
+            ],
+        ];
     }
 }
