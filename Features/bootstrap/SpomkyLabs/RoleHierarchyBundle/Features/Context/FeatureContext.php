@@ -1,12 +1,21 @@
 <?php
 
+/*
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2014-2015 Spomky-Labs
+ *
+ * This software may be modified and distributed under the terms
+ * of the MIT license.  See the LICENSE file for details.
+ */
+
 namespace SpomkyLabs\RoleHierarchyBundle\Features\Context;
 
-use Behat\Symfony2Extension\Context\KernelAwareContext;
 use Behat\Behat\Context\SnippetAcceptingContext;
 use Behat\MinkExtension\Context\MinkContext;
-use Symfony\Component\HttpKernel\KernelInterface;
+use Behat\Symfony2Extension\Context\KernelAwareContext;
 use Symfony\Component\BrowserKit\Cookie;
+use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
 
 /**
@@ -57,7 +66,7 @@ class FeatureContext extends MinkContext implements KernelAwareContext, SnippetA
     public function iAmOnThePage($uri)
     {
         $client = $this->getSession()->getDriver()->getClient();
-        $client->request("GET", $uri);
+        $client->request('GET', $uri);
     }
 
     /**
@@ -65,7 +74,7 @@ class FeatureContext extends MinkContext implements KernelAwareContext, SnippetA
      */
     public function iWantToVerifyIfIsGranted($grant)
     {
-        $this->result = $this->getKernel()->getContainer()->get("security.context")->isGranted($grant);
+        $this->result = $this->getKernel()->getContainer()->get('security.context')->isGranted($grant);
     }
 
     /**
@@ -74,7 +83,7 @@ class FeatureContext extends MinkContext implements KernelAwareContext, SnippetA
     public function iShouldGetTrue()
     {
         if (true !== $this->result) {
-            throw new \Exception("I did not get true.");
+            throw new \Exception('I did not get true.');
         }
     }
 
@@ -84,7 +93,7 @@ class FeatureContext extends MinkContext implements KernelAwareContext, SnippetA
     public function iShouldGetFalse()
     {
         if (false !== $this->result) {
-            throw new \Exception("I did not get false.");
+            throw new \Exception('I did not get false.');
         }
     }
 }
