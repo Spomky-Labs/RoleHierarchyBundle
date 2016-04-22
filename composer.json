@@ -12,15 +12,15 @@
     ],
     "require": {
         "php": ">=5.3.3",
-        "symfony/security-bundle": "~2.3",
-        "doctrine/doctrine-bundle": "~1.0"
+        "symfony/security-bundle": "^2.3|^3.0",
+        "doctrine/doctrine-bundle": "^1.0"
     },
     "require-dev": {
-        "symfony/framework-bundle": "~2.3",
-        "symfony/class-loader": "~2.3",
-        "symfony/yaml": "~2.3",
-        "symfony/finder": "~2.3",
-        "symfony/validator": "~2.3",
+        "symfony/framework-bundle": "^2.3|^3.0",
+        "symfony/class-loader": "^2.3|^3.0",
+        "symfony/yaml": "^2.3|^3.0",
+        "symfony/finder": "^2.3|^3.0",
+        "symfony/validator": "^2.3|^3.0",
 
         "doctrine/doctrine-fixtures-bundle": "*@dev",
         "vipsoft/doctrine-data-fixtures-extension": "3.*@dev",
