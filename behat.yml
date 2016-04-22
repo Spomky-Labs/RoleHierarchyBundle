@@ -7,7 +7,7 @@ default:
                 env: test
                 debug: true
                 path: Tests/app/AppKernel.php
-                bootstrap: vendor/autoload.php
+                bootstrap: Tests/app/autoload.php
         VIPSoft\DoctrineDataFixturesExtension\Extension:
             lifetime:    scenario
             autoload:    true
