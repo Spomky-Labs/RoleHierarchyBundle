@@ -19,7 +19,7 @@ This version of the bundle requires:
 * Symfony 2.3+
 * PHP 5.3+
 
-It has been successfully tested using `PHP 5.3` to `PHP 5.6` and `HHVM` under Symfony `2.3` to `2.6`.
+It has been successfully tested using `PHP 5.3` to `PHP 7.0` and `HHVM` under Symfony `2.3` to `3.0`.
 
 # Installation #
 
@@ -34,24 +34,25 @@ Installation is a quick 4 steps process:
 
 The preferred way to install this bundle is to rely on Composer:
 
-	composer require spomky-labs/role-hierarchy-bundle "~2.0.0"
+```sh
+composer require spomky-labs/role-hierarchy-bundle
+```
 
 ##Step 2: Enable the bundle##
 
 Finally, enable the bundle in the kernel:
 
 ```php
+<?php
+// app/AppKernel.php
 
-	<?php
-	// app/AppKernel.php
-	
-	public function registerBundles()
-	{
-	    $bundles = array(
-	        // ...
-	        new SpomkyLabs\RoleHierarchyBundle\SpomkyLabsRoleHierarchyBundle(),
-	    );
-	}
+public function registerBundles()
+{
+    $bundles = array(
+        // ...
+        new SpomkyLabs\RoleHierarchyBundle\SpomkyLabsRoleHierarchyBundle(),
+    );
+}
 ```
 
 ##Step 3: Create model class##
@@ -78,42 +79,41 @@ This bundle is able to support Doctrine ORM, ODM, CouchDB or MongoDB. Please not
 If you are persisting your data via the Doctrine ORM, then your class should live in the Entity namespace of your bundle and look like this to start:
 
 ```php
+<?php
+// src/Acme/RoleBundle/Entity/Role.php
 
-	<?php
-	// src/Acme/RoleBundle/Entity/Role.php
-	
-	namespace Acme\RoleBundle\Entity;
-	
-	use SpomkyLabs\RoleHierarchyBundle\Entity\Role as Base;
-	use Doctrine\ORM\Mapping as ORM;
-	
-	/**
-	 * Role
-	 *
-	 * @ORM\Table(name="roles")
-	 * @ORM\Entity()
-	 */
-	class Role extends Base
-	{
-	    /**
-	     * @var integer $id
-	     *
-	     * @ORM\Column(name="id", type="integer")
-	     * @ORM\Id
-	     * @ORM\GeneratedValue(strategy="AUTO")
-	     */
-	    protected $id;
-	
-	    /**
-	     * @ORM\ManyToOne(targetEntity="Role")
-	     * @ORM\JoinColumn(name="parent_id", referencedColumnName="id")
-	     **/
-	    protected $parent;
-	
-	    public function getId() {
-	        return $this->id;
-	    }
-	}
+namespace Acme\RoleBundle\Entity;
+
+use SpomkyLabs\RoleHierarchyBundle\Entity\Role as Base;
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Role
+ *
+ * @ORM\Table(name="roles")
+ * @ORM\Entity()
+ */
+class Role extends Base
+{
+    /**
+     * @var integer $id
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Role")
+     * @ORM\JoinColumn(name="parent_id", referencedColumnName="id")
+     **/
+    protected $parent;
+
+    public function getId() {
+        return $this->id;
+    }
+}
 ```
 
 ###Doctrine ODM###
@@ -131,18 +131,16 @@ To be written
 ##Step 4: Configure your application##
 
 ```yml
-
-	# app/config/config.yml
-	spomkylabs_role_hierarchy:
-	    role_class:          Acme\RoleBundle\Entity\Role
+# app/config/config.yml
+spomkylabs_role_hierarchy:
+    role_class:          Acme\RoleBundle\Entity\Role
 ```
 
 If you have your own roles manager, you can use it. It just needs to implement `SpomkyLabs\RoleHierarchyBundle\Model\RoleManagerInterface`.
 
 ```yml
-
-	# app/config/config.yml
-	spomkylabs_role_hierarchy:
-	    ...
-	    role_manager: my.custom.role.manager
+# app/config/config.yml
+spomkylabs_role_hierarchy:
+    ...
+    role_manager: my.custom.role.manager
 ```
