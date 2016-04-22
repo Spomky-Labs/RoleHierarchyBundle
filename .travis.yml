@@ -16,12 +16,12 @@ env:
     - SYMFONY_VERSION=3.0.*
 
 before_script:
-    - curl -s http://getcomposer.org/installer | php
-    - php composer.phar require symfony/class-loader:${SYMFONY_VERSION} --no-update
-    - php composer.phar require symfony/yaml:${SYMFONY_VERSION} --no-update
-    - php composer.phar require symfony/security-bundle:${SYMFONY_VERSION} --no-update
-    - php composer.phar require symfony/framework-bundle:${SYMFONY_VERSION} --no-update
-    - php composer.phar update --dev --no-interaction
+    - composer self-update
+    - composer require symfony/class-loader:${SYMFONY_VERSION} --no-update
+    - composer require symfony/yaml:${SYMFONY_VERSION} --no-update
+    - composer require symfony/security-bundle:${SYMFONY_VERSION} --no-update
+    - composer require symfony/framework-bundle:${SYMFONY_VERSION} --no-update
+    - composer update --no-interaction
 
 script:
   - php vendor/bin/behat
