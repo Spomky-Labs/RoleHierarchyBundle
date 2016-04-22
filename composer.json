@@ -22,14 +22,14 @@
         "symfony/finder": "^2.3|^3.0",
         "symfony/validator": "^2.3|^3.0",
 
-        "doctrine/doctrine-fixtures-bundle": "*@dev",
-        "vipsoft/doctrine-data-fixtures-extension": "3.*@dev",
+        "doctrine/doctrine-fixtures-bundle": "^2.0",
+        "vipsoft/doctrine-data-fixtures-extension": "^3.0",
         "behat/behat": "3.*",
-        "behat/symfony2-extension": "2.0.x-dev",
+        "behat/symfony2-extension": "^2.0",
         "behat/mink": "*",
         "behat/mink-extension": "*",
         "behat/mink-browserkit-driver":  "*",
-        "doctrine/orm": ">=2.2.3,<2.5-dev"
+        "doctrine/orm": "^2.2"
     },
     "suggest": {
     },
