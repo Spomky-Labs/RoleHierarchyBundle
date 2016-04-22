@@ -10,18 +10,19 @@ php:
   - nightly
 
 env:
-    - SYMFONY_VERSION=2.3.*
-    - SYMFONY_VERSION=2.7.*
-    - SYMFONY_VERSION=2.8.*
-    - SYMFONY_VERSION=3.0.*
+  - SYMFONY_VERSION=2.3.*
+  - SYMFONY_VERSION=2.7.*
+  - SYMFONY_VERSION=2.8.*
+  - SYMFONY_VERSION=3.0.*
 
 before_script:
-    - composer self-update
-    - composer require symfony/class-loader:${SYMFONY_VERSION} --no-update
-    - composer require symfony/yaml:${SYMFONY_VERSION} --no-update
-    - composer require symfony/security-bundle:${SYMFONY_VERSION} --no-update
-    - composer require symfony/framework-bundle:${SYMFONY_VERSION} --no-update
-    - composer update --no-interaction
+  - sh -c 'if [ "$TRAVIS_PHP_VERSION" != "hhvm" ]; then phpenv config-rm xdebug.ini; fi;'
+  - composer self-update
+  - composer require symfony/class-loader:${SYMFONY_VERSION} --no-update
+  - composer require symfony/yaml:${SYMFONY_VERSION} --no-update
+  - composer require symfony/security-bundle:${SYMFONY_VERSION} --no-update
+  - composer require symfony/framework-bundle:${SYMFONY_VERSION} --no-update
+  - composer update --no-interaction
 
 script:
   - php vendor/bin/behat
