@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <doctrine-mapping>
     <mapped-superclass name="SpomkyLabs\RoleHierarchyBundle\Document\Role" indexed="true">
-
         <field name="name" fieldName="name" type="string" indexed="true" />
-
     </mapped-superclass>
 
 </doctrine-mapping>

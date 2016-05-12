@@ -37,13 +37,16 @@ class LoadRoleData extends AbstractFixture implements FixtureInterface, Containe
      */
     public function load(ObjectManager $manager)
     {
-        $role_manager = $this->container->get('spomkylabs_role_hierarchy.role_manager');
+        $role_manager = $this->container->get('role_hierarchy.role_manager');
 
         foreach ($this->getRoles() as $role) {
+            /**
+             * @var $entity \SpomkyLabs\TestRoleHierarchyBundle\Entity\Role
+             */
             $entity = $role_manager->createRole();
             $parent = null === $role['parent'] ? null : $this->getReference('role-'.$role['parent']);
-            $entity->setName($role['name'])
-                   ->setParent($parent);
+            $entity->setName($role['name']);
+            $entity->setParent($parent);
 
             $role_manager->saveRole($entity);
             $this->addReference('role-'.$role['name'], $entity);

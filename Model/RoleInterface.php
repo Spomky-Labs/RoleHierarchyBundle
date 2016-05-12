@@ -13,7 +13,13 @@ namespace SpomkyLabs\RoleHierarchyBundle\Model;
 
 interface RoleInterface
 {
+    /**
+     * @return string
+     */
     public function getName();
 
+    /**
+     * @return \SpomkyLabs\RoleHierarchyBundle\Model\RoleInterface
+     */
     public function getParent();
 }

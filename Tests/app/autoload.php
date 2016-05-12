@@ -9,7 +9,6 @@
  * of the MIT license.  See the LICENSE file for details.
  */
 
-use Composer\Autoload\ClassLoader;
 use Doctrine\Common\Annotations\AnnotationRegistry;
 
 /*

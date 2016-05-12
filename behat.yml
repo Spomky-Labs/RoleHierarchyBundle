@@ -1,6 +1,8 @@
 default:
+    formatters:
+        pretty: true
     autoload:
-        '': %paths.base%/Features/bootstrap
+        '': '%paths.base%'
     extensions:
         Behat\Symfony2Extension:
             kernel:
@@ -18,6 +20,10 @@ default:
                     symfony2: ~
     suites:
         test_suite:
+            paths:
+                - '%paths.base%/Features'
+            contexts:
+                - SpomkyLabs\TestRoleHierarchyBundle\Features\Context\FeatureContext
             type: symfony_bundle
             mink_session: default
             bundle: SpomkyLabsRoleHierarchyBundle

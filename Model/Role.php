@@ -13,36 +13,29 @@ namespace SpomkyLabs\RoleHierarchyBundle\Model;
 
 class Role implements RoleInterface
 {
-    protected $id;
+    /**
+     * @var string
+     */
     protected $name;
+
+    /**
+     * @var mixed
+     */
     protected $parent;
 
-    public function getId()
-    {
-        return $this->id;
-    }
-
+    /**
+     * {@inheritdoc}
+     */
     public function getName()
     {
         return $this->name;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function getParent()
     {
         return $this->parent;
-    }
-
-    public function setName($name)
-    {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    public function setParent($parent)
-    {
-        $this->parent = $parent;
-
-        return $this;
     }
 }

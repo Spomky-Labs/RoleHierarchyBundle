@@ -17,8 +17,11 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
-class SpomkyLabsRoleHierarchyExtension extends Extension
+final class SpomkyLabsRoleHierarchyExtension extends Extension
 {
+    /**
+     * @var string
+     */
     private $alias;
 
     /**
@@ -30,13 +33,16 @@ class SpomkyLabsRoleHierarchyExtension extends Extension
     }
 
     /**
-     * @return string
+     * {@inheritdoc}
      */
     public function getAlias()
     {
         return $this->alias;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function load(array $configs, ContainerBuilder $container)
     {
         $processor = new Processor();

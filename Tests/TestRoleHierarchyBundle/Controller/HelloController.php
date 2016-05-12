@@ -18,6 +18,6 @@ class HelloController extends Controller
 {
     public function indexAction()
     {
-        return new Response();
+        return new Response('Hello World!');
     }
 }

@@ -14,10 +14,13 @@ namespace SpomkyLabs\RoleHierarchyBundle;
 use SpomkyLabs\RoleHierarchyBundle\DependencyInjection\SpomkyLabsRoleHierarchyExtension;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class SpomkyLabsRoleHierarchyBundle extends Bundle
+final class SpomkyLabsRoleHierarchyBundle extends Bundle
 {
+    /**
+     * {@inheritdoc}
+     */
     public function getContainerExtension()
     {
-        return new SpomkyLabsRoleHierarchyExtension('spomkylabs_role_hierarchy');
+        return new SpomkyLabsRoleHierarchyExtension('role_hierarchy');
     }
 }

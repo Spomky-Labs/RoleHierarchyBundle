@@ -9,37 +9,25 @@
  * of the MIT license.  See the LICENSE file for details.
  */
 
-namespace SpomkyLabs\RoleHierarchyBundle\Features\Context;
+namespace SpomkyLabs\TestRoleHierarchyBundle\Features\Context;
 
 use Behat\Behat\Context\SnippetAcceptingContext;
 use Behat\MinkExtension\Context\MinkContext;
-use Behat\Symfony2Extension\Context\KernelAwareContext;
+use Behat\Symfony2Extension\Context\KernelDictionary;
 use Symfony\Component\BrowserKit\Cookie;
-use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
 
 /**
  * Behat context class.
  */
-class FeatureContext extends MinkContext implements KernelAwareContext, SnippetAcceptingContext
+class FeatureContext extends MinkContext implements SnippetAcceptingContext
 {
-    private $kernel;
-    private $result = null;
-
-    public function setKernel(KernelInterface $kernel)
-    {
-        $this->kernel = $kernel;
-
-        return $this;
-    }
+    use KernelDictionary;
 
     /**
-     * @return \Symfony\Component\HttpKernel\KernelInterface
+     * @var bool
      */
-    public function getKernel()
-    {
-        return $this->kernel;
-    }
+    private $result;
 
     /**
      * @Given I am logged in as :username
@@ -50,7 +38,7 @@ class FeatureContext extends MinkContext implements KernelAwareContext, SnippetA
 
         $session = $client->getContainer()->get('session');
 
-        $user = $this->getKernel()->getContainer()->get('test_bundle.user_manager')->getUser($username);
+        $user = $this->getContainer()->get('test_bundle.user_manager')->getUser($username);
 
         $token = new UsernamePasswordToken($user, null, 'main', $user->getRoles());
         $session->set('_security_main', serialize($token));
@@ -74,7 +62,7 @@ class FeatureContext extends MinkContext implements KernelAwareContext, SnippetA
      */
     public function iWantToVerifyIfIsGranted($grant)
     {
-        $this->result = $this->getKernel()->getContainer()->get('security.context')->isGranted($grant);
+        $this->result = $this->getContainer()->get('security.authorization_checker')->isGranted($grant);
     }
 
     /**

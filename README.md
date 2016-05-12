@@ -16,10 +16,10 @@ Role Hierarchy
 
 This version of the bundle requires:
 
-* Symfony 2.3+
-* PHP 5.3+
+* Symfony 2.8 or 3.0+
+* PHP 5.6+
 
-It has been successfully tested using `PHP 5.3` to `PHP 7.0` and `HHVM` under Symfony `2.3` to `3.0`.
+It has been successfully tested using `PHP 5.6` to `PHP 7.0` and `HHVM` under Symfony `2.8` to `3.0`.
 
 # Installation #
 
@@ -133,7 +133,7 @@ To be written
 ```yml
 # app/config/config.yml
 spomkylabs_role_hierarchy:
-    role_class:          Acme\RoleBundle\Entity\Role
+    role_class: "Acme\RoleBundle\Entity\Role"
 ```
 
 If you have your own roles manager, you can use it. It just needs to implement `SpomkyLabs\RoleHierarchyBundle\Model\RoleManagerInterface`.
@@ -142,5 +142,5 @@ If you have your own roles manager, you can use it. It just needs to implement `
 # app/config/config.yml
 spomkylabs_role_hierarchy:
     ...
-    role_manager: my.custom.role.manager
+    role_manager: "my.custom.role.manager"
 ```

@@ -33,5 +33,5 @@ doctrine:
                     SpomkyLabsTestRoleHierarchyBundle:  ~
                     SpomkyLabsRoleHierarchyBundle:  ~
 
-spomkylabs_role_hierarchy:
+role_hierarchy:
     role_class: SpomkyLabs\TestRoleHierarchyBundle\Entity\Role

@@ -15,10 +15,27 @@ use Doctrine\Common\Persistence\ManagerRegistry;
 
 class RoleManager implements RoleManagerInterface
 {
+    /**
+     * @var string
+     */
     protected $class;
+
+    /**
+     * @var \Doctrine\Common\Persistence\ObjectManager
+     */
     protected $entity_manager;
+
+    /**
+     * @var \Doctrine\Common\Persistence\ObjectRepository
+     */
     protected $entity_repository;
 
+    /**
+     * RoleManager constructor.
+     *
+     * @param \Doctrine\Common\Persistence\ManagerRegistry $manager_registry
+     * @param string                                       $class
+     */
     public function __construct(ManagerRegistry $manager_registry, $class)
     {
         $this->class = $class;
@@ -58,6 +75,9 @@ class RoleManager implements RoleManagerInterface
         return $this->class;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function createRole()
     {
         $class = $this->getClass();
@@ -65,11 +85,12 @@ class RoleManager implements RoleManagerInterface
         return new $class();
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function saveRole(RoleInterface $role)
     {
         $this->getEntityManager()->persist($role);
         $this->getEntityManager()->flush();
-
-        return $this;
     }
 }

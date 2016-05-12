@@ -5,16 +5,12 @@
                         http://doctrine-project.org/schemas/odm/doctrine-mongo-mapping.xsd">
 
     <mapped-superclass name="SpomkyLabs\RoleHierarchyBundle\Document\Role" collection="roles">
-
         <field name="name" fieldName="name" type="string" />
-
         <indexes>
             <index unique="true" dropDups="true">
                 <key name="name" order="asc" />
                 <option name="safe" value="true" />
             </index>
         </indexes>
-
     </mapped-superclass>
-
 </doctrine-mongo-mapping>

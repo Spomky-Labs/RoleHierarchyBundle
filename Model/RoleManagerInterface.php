@@ -39,7 +39,7 @@ interface RoleManagerInterface
     public function createRole();
 
     /**
-     * @return self
+     * @param \SpomkyLabs\RoleHierarchyBundle\Model\RoleInterface $role
      */
     public function saveRole(RoleInterface $role);
 }

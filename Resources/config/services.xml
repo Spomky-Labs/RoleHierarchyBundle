@@ -4,19 +4,19 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
-    <parameters>
-        <parameter key="spomkylabs_role_hierarchy.role_manager.default.class">SpomkyLabs\RoleHierarchyBundle\Model\RoleManager</parameter>
-        <parameter key="security.role_hierarchy.class">SpomkyLabs\RoleHierarchyBundle\Security\RoleHierarchy</parameter>
-    </parameters>
-
     <services>
-        <service id="spomkylabs_role_hierarchy.role_manager.default" class="%spomkylabs_role_hierarchy.role_manager.default.class%">
+        <service id="role_hierarchy.role_manager.default" class="SpomkyLabs\RoleHierarchyBundle\Model\RoleManager">
             <argument type="service" id="doctrine" />
-            <argument>%spomkylabs_role_hierarchy.role_class%</argument>
+            <argument>%role_hierarchy.role_class%</argument>
         </service>
 
-        <service id="security.role_hierarchy" class="%security.role_hierarchy.class%" public="false">
-            <argument type="service" id="spomkylabs_role_hierarchy.role_manager"/>
+        <service id="spomky_labs.role_hierarchy" class="SpomkyLabs\RoleHierarchyBundle\Security\RoleHierarchy" public="false">
+            <argument type="service" id="role_hierarchy.role_manager"/>
+        </service>
+
+        <service id="spomky_labs.role_hierarchy_voter" class="SpomkyLabs\RoleHierarchyBundle\Security\RoleHierarchyVoter" public="false">
+            <argument type="service" id="spomky_labs.role_hierarchy"/>
+            <tag name="security.voter" priority="240" />
         </service>
     </services>
 </container>

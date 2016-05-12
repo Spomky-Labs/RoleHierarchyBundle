@@ -15,4 +15,32 @@ use SpomkyLabs\RoleHierarchyBundle\Entity\Role as Base;
 
 class Role extends Base
 {
+    /**
+     * @var mixed
+     */
+    protected $id;
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param string $name
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * @param mixed $parent
+     */
+    public function setParent($parent)
+    {
+        $this->parent = $parent;
+    }
 }
