@@ -3,7 +3,7 @@
 /*
  * The MIT License (MIT)
  *
- * Copyright (c) 2014-2015 Spomky-Labs
+ * Copyright (c) 2014-2016 Spomky-Labs
  *
  * This software may be modified and distributed under the terms
  * of the MIT license.  See the LICENSE file for details.
@@ -41,7 +41,7 @@ class LoadRoleData extends AbstractFixture implements FixtureInterface, Containe
 
         foreach ($this->getRoles() as $role) {
             /**
-             * @var $entity \SpomkyLabs\TestRoleHierarchyBundle\Entity\Role
+             * @var \SpomkyLabs\TestRoleHierarchyBundle\Entity\Role
              */
             $entity = $role_manager->createRole();
             $parent = null === $role['parent'] ? null : $this->getReference('role-'.$role['parent']);
