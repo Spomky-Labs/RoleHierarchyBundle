@@ -23,11 +23,11 @@
         "symfony/validator": "^2.8|^3.0",
 
         "doctrine/doctrine-fixtures-bundle": "^2.0",
-        "vipsoft/doctrine-data-fixtures-extension": "^3.0",
+        "behat-extension/doctrine-data-fixtures-extension": "dev-master",
         "behat/behat": "^3.0",
         "behat/symfony2-extension": "^2.0",
         "behat/mink": "*",
-        "behat/mink-extension": "*",
+        "behat/mink-extension": "^2.1",
         "behat/mink-browserkit-driver":  "*",
         "doctrine/orm": "^2.2",
         "symfony/var-dumper": "^2.8|^3.0"

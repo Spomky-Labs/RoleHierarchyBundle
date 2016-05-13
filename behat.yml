@@ -10,7 +10,7 @@ default:
                 debug: true
                 path: Tests/app/AppKernel.php
                 bootstrap: Tests/app/autoload.php
-        VIPSoft\DoctrineDataFixturesExtension\Extension:
+        BehatExtension\DoctrineDataFixturesExtension\Extension:
             lifetime:    scenario
             autoload:    true
         Behat\MinkExtension:
