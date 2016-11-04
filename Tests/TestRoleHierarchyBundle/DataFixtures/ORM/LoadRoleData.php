@@ -40,7 +40,7 @@ class LoadRoleData extends AbstractFixture implements FixtureInterface, Containe
         $role_manager = $this->container->get('role_hierarchy.role_manager');
 
         foreach ($this->getRoles() as $role) {
-            /**
+            /*
              * @var \SpomkyLabs\TestRoleHierarchyBundle\Entity\Role
              */
             $entity = $role_manager->createRole();
