@@ -10,7 +10,7 @@ Role Hierarchy
 [![Latest Stable Version](https://poser.pugx.org/spomky-labs/role-hierarchy-bundle/v/stable.png)](https://packagist.org/packages/spomky-labs/role-hierarchy-bundle)
 [![Total Downloads](https://poser.pugx.org/spomky-labs/role-hierarchy-bundle/downloads.png)](https://packagist.org/packages/spomky-labs/role-hierarchy-bundle)
 [![Latest Unstable Version](https://poser.pugx.org/spomky-labs/role-hierarchy-bundle/v/unstable.png)](https://packagist.org/packages/spomky-labs/role-hierarchy-bundle)
-[![License](https://poser.pugx.org/spomky-labs/role-hierarchy-bundle/license.png)](https://packagist.org/packages/spomky-labs/role-hierarchy-bundle)
+[![License](https://poser.pugx.org/spomky-labs/role-hierarchy-bundle/license.png)](https://packagist.org/packages/spomky-labs/role-hierarchy-bundle) [![GuardRails badge](https://badges.production.guardrails.io/Spomky-Labs/RoleHierarchyBundle.svg)](https://www.guardrails.io)
 
 # Prerequisites #
 
